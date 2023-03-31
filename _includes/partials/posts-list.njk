@@ -1,0 +1,29 @@
+{% macro posts(collection, num=0) %}
+    {% if num == 0 %}
+    {% set num = collection | length %}
+    {% endif %}
+
+    <div id="posts">
+    {% for post in collection | reverse %}
+    {% if loop.index < num + 1 %}
+        <div class="post my-2 px-2 rounded-md bg-gray-300 bg-opacity-50" onclick="window.location.href='{{ post.url }}';">
+            <h3 class="font-semibold">{{ post.data.title }}</h3>
+            <p>by {{ post.data.author }} on <i>{{ post.date.getDate() }}/{{ post.date.getMonth()+1 }}/{{ post.date.getFullYear() }}</i></p>
+
+            {% for tag in post.data.tags %}
+            {% if tag != "posts" %}
+                <span class="dark:bg-slate-700 bg-gray-500 text-white rounded-lg px-2 py-3/4">{{tag}}</span>
+            {% endif %}
+            {% endfor %}
+
+            <p class="w-full"><a class="underline" href="{{ post.url }}">read more</a></p>
+        </div>
+
+        {% if loop.index0 != num - 1 %}
+            <hr class="border-dashed border-2 my-2">
+        {% endif %}
+
+    {% endif %}
+    {% endfor %}
+    </div>
+{% endmacro %}

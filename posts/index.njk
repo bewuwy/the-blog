@@ -1,0 +1,15 @@
+---
+eleventyExcludeFromCollections: true
+title: posts | the blog
+layout: "default.njk"
+---
+
+
+{% block content %}
+
+<h2>all posts:</h2>
+
+{% from "partials/posts-list.njk" import posts %}
+{{ posts(collections.all) }}
+
+{% endblock %}

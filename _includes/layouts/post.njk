@@ -1,0 +1,14 @@
+{% extends "_includes/default.njk" %}
+
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <h3>{{ page.date.getDate() }}/{{ page.date.getMonth()+1 }}/{{ page.date.getFullYear() }}</h3>
+    <h3 class="-mt-2">by {{ author or "[...]" }}</h3>
+
+    <hr class="border-dashed border-2 mt-4">
+
+    <div id="content" class="mt-4 mb-[30vh]">
+        {{ content | safe }}
+    </div>
+{% endblock %}

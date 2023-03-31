@@ -1,0 +1,19 @@
+---
+eleventyExcludeFromCollections: true
+title: the blog
+---
+
+{% extends "_includes/default.njk" %}
+
+
+{% block content %}
+  <p>Welcome to my awesome blog.</p>
+
+  <div id="last-posts" class="my-4">
+    <h3>last posts:</h3>
+        {% from "partials/posts-list.njk" import posts %}
+        {{ posts(collections.posts, 3) }}
+  </div>
+
+  <a href="/posts/" class="underline"><h3>all posts</h3></a>
+{% endblock %}

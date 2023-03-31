@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  @apply m-0 w-full
+         p-0;
+}
+
+#page-content {
+  @apply w-10/12 md:w-7/12 lg:w-5/12 xl:w-4/12
+         m-auto mt-10 md:mt-16
+         pb-16;
+}
+
+#content :is(h1, h2, h3) {
+  @apply mb-4;
+}
+
+#content p {
+  @apply mb-2;
+}
+
+h1 {
+  @apply text-3xl;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+h3 {
+  @apply text-lg;
+}
+
+#content a {
+  @apply underline;
+}
+
+nav a {
+  @apply text-gray-500 hover:text-gray-900
+         dark:text-white dark:hover:text-opacity-50
+          flex-grow text-center no-underline;
+}
