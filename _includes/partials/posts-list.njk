@@ -5,7 +5,7 @@
 
     <div id="posts">
     {% for post in collection | reverse %}
-    {% if loop.index < num + 1 %}
+    {% if loop.index < num + 1 and post.data.title|length %}
         <div class="post my-2 px-2 rounded-md bg-gray-300 bg-opacity-50" onclick="window.location.href='{{ post.url }}';">
             <h3 class="font-semibold">{{ post.data.title }}</h3>
             <p>by {{ post.data.author }} on <i>{{ post.date.getDate() }}/{{ post.date.getMonth()+1 }}/{{ post.date.getFullYear() }}</i></p>
